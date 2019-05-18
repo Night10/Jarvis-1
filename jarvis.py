@@ -6,8 +6,8 @@ import speech_recognition as sr
 import webbrowser
 """To open webbrowser and put url in it"""
 """Python Speech recognition module, I used google speech to text engine through it."""
-"""It creates engine for text to speech, I used microsoft SAPI5 engine to make my program speak"""
-"""pyttsx3 stands for regex expression. I imported it to easily replace space with plus."""
+"""pyttsx3 creates engine for text to speech, I used microsoft SAPI5 engine to make my program speak"""
+"""re stands for regex expression. I imported it to easily replace space with plus."""
 """Imported datetime to get date and time."""
 
 
