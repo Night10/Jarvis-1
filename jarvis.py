@@ -62,9 +62,9 @@ class Jarvis():
         search_string = re.sub(" ", "+", search_string)
         webbrowser.open(f"www.{word}.com/search?q={search_string}")
 
-    def search_wikipedia(self,word, search_string):
+    def search_wikipedia(self, search_string):
         """Used to search wikipedia"""
-        search_string = search_string.replace(f"search {word}","")
+        search_string = search_string.replace("search wikipedia","")
         results = wikipedia.summary(search_string,sentences=4)
         self.speak(results)
     def timeanddate(self):
@@ -82,7 +82,7 @@ class Jarvis():
             elif "search youtube" in query.lower():
                 self.search("youtube",query.lower())
             elif "search wikipedia" in query.lower():
-                self.search_wikipedia(wikipedia,query.lower())
+                self.search_wikipedia(query.lower())
             elif "time" in query.lower():
                 self.timeanddate()
             elif "exit" in query.lower() or "goodbye" in query.lower():
