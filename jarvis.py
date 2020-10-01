@@ -48,6 +48,7 @@ class Jarvis():
                     # self.speak("recognizing...")
                     query = r.recognize_google(audio, language="en-in") #The audio recorded is sent to google to recognizee
                     # self.speak(f"User Said: {query}")
+                    
                 except Exception as e:
                     self.speak(e)
                     self.speak("Please say that again...")
@@ -67,6 +68,7 @@ class Jarvis():
         search_string = search_string.replace("search wikipedia","")
         results = wikipedia.summary(search_string,sentences=4)
         self.speak(results)
+        
     def timeanddate(self):
         """Used datetime module to print date and time"""
         time = datetime.datetime.now()
@@ -79,17 +81,23 @@ class Jarvis():
             query = self.take_input()
             if "search google" in query.lower():
                 self.search("google",query.lower())
+                
             elif "search youtube" in query.lower():
                 self.search("youtube",query.lower())
+                
             elif "search wikipedia" in query.lower():
                 self.search_wikipedia(query.lower())
+                
             elif "time" in query.lower():
                 self.timeanddate()
+                
             elif "exit" in query.lower() or "goodbye" in query.lower():
                 if datetime.datetime.now().hour > 19 or datetime.datetime.now().hour <= 5:
-                    self.speak("goodnight")
+                    self.speak("its too late, go get some sleep")
+                    
                 else:
-                    self.speak("goodbye")
+                    self.speak("goodnight")
+                    
                 break
 
 if __name__ == "__main__":
